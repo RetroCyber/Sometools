@@ -1,6 +1,6 @@
 /****************************************
  数据结构类型：顺序栈
- 完成时间：2023-03-14
+ 完成时间：2023-03-18
  ****************************************/
 #include "SqStack.h"
 #include <stdio.h>
@@ -26,6 +26,13 @@ bool SqStack::Pop(int &v){
         v = this->stack[this->top--];//若栈非空则将栈顶元素弹出
         ret = true;
     }
+    return ret;
+}
+
+int SqStack::Pop(){
+    int ret = -1;
+    if(!Pop(ret))
+        printf("Fatal:Can't pop the top element\n");
     return ret;
 }
 
